@@ -1,0 +1,161 @@
+.main {
+    width: 100%;
+    height: auto;
+    @include flex( row, center, center );
+    
+
+    &__container {
+        width: 65rem;
+        height: 26rem;
+        background-color: none;
+        // padding-bottom: 2rem;
+        border: 2px solid $color-gray;
+        border-radius: 1rem;
+        overflow: hidden;
+    }
+}
+
+.section {
+    width: 100%;
+    padding: 1.6rem;
+
+    &--top {
+        @include flex( row, space-between, center );
+        border-bottom: 2px solid $color-gray;
+        background-color: none;
+    }
+
+    &--middle {
+        width: auto;
+        position: relative;
+        height: 13.6rem;
+        padding: 0;
+        margin: 1.6rem 1.6rem 0;
+    }
+
+    &--bottom {
+        height: 4.8rem;
+        border-top: 2px solid $color-gray;
+        padding: 0;
+        @include flex( row, center, center);
+
+        & svg {
+            width: 3rem;
+            height: 3rem;
+
+            &:hover {
+                cursor: pointer;
+            }
+        }
+    }
+}
+
+.title {
+    font-size: 2rem; 
+}
+
+.share {
+
+    &__img {
+        width: 2rem;
+    }
+
+    &:hover {
+        cursor: pointer;
+    }
+}
+
+.output {
+    width: 100%;
+    @include flex( Row, space-between, center);
+
+    &__bpm {
+        font-size: 4.8rem;
+
+        &--big {
+            display: inline-block;
+            color: $color-bpm-big;
+        }
+        &--small {
+            display: inline-block;
+            font-size: 1.4rem;
+            color: $color-bpm-small;
+            transform: translateX(-1rem);
+        }
+    }
+
+    &__play {
+
+        & svg {
+            width: 4.8rem;
+            height: 4.8rem;
+        }
+
+        &:hover {
+            cursor: pointer;
+        }
+    }
+}
+
+.input {
+    @include flex( row, space-between, center);
+
+    &__minus, &__plus {
+        width: 3.5rem;
+        height: 3.5rem;
+        position: relative;
+
+        & svg {
+            height: 100%;
+            width: 100%;
+            position: absolute;
+        }
+
+        &:hover {
+            cursor: pointer;
+        }
+    }
+
+    &__range {
+        -webkit-appearance: none;
+        display: inline-block;
+        height: 48px;
+        margin: 0;
+        width: calc(100% - 96px);
+        background: transparent;
+
+        // range track //
+        &::-webkit-slider-runnable-track { // for Chrome, Safari, Opera, and Edge Chromium
+            background: $color-track;
+            height: .3rem;
+        }
+
+        &::-moz-range-track { // for Firefox
+            background: $color-track;
+            height: .3rem;  
+        }
+
+        // range thumb //
+        &::-webkit-slider-thumb{
+            width: 2rem; 
+            height: 2rem;
+            -webkit-appearance: none; /* Override default look */
+            appearance: none;
+            // center the thumb on the track 
+            // margin-top = (track height in pixels / 2) - (thumb height in pixels /2)
+            margin-top: -8.5px; /* Centers thumb on the track */
+            background-color: $color-load;
+            border-radius: 50%;
+        }
+
+        &::-moz-range-thumb {
+
+        }
+
+        &:hover {
+            cursor: pointer;
+        }
+    }
+}
+
+
